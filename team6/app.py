@@ -1,4 +1,4 @@
-#code to operate door lock through UI in a browser
+#code to operate door lock through UI in a browser. This uses the index.html in /templates directory to generate the UI.
 
 import RPi.GPIO as GPIO
 from flask import Flask, render_template, request
