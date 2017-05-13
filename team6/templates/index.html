@@ -1,3 +1,5 @@
+/*HTML to generate the user interface*/
+
 <html>
 <head>
 <link rel="stylesheet" href='/static/main.css' />
@@ -8,18 +10,18 @@
 {% for pin in pins %}
 <p>
 {% if pins[pin].state == true %}
-<a href="/{{pin}}/off">
-<img src="/static/off.png" width="70" height="70"></a>
-<br><br>Door Unlocked<br><br>
+<a href="/{{pin}}/off">      /*Anchor to turn off URL*/
+<img src="/static/off.png" width="70" height="70"></a>  /*Insert red button image*/
+<br><br>Door Unlocked<br><br>   /* Display message*/
 {% else %}
-<a href="/{{pin}}/on">
-<img src="/static/on.png" width="70" height="70"></a>
-<br><br>Door Locked<br><br>
+<a href="/{{pin}}/on">       /*Anchor to turn off URL*/
+<img src="/static/on.png" width="70" height="70"></a>  /*Insert green button image*/
+<br><br>Door Locked<br><br>    /* Display message */
 {% endif %}
 </p>
 {% endfor %}
-<iframe src="http://192.168.1.101:8081" width="640" height="480">
-        <p>Error: Cannot stream webcam video</p>
+<iframe src="http://192.168.1.101:8081" width="640" height="480">       /*Pull the web cam server stream web page into an iframe in the UI */
+        <p>Error: Cannot stream webcam video</p>        /* Iframe error message */
 </center>
 </body>
 </html>
