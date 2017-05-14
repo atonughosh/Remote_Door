@@ -18,8 +18,8 @@ while(True):
 	          [7, 8, 9, 'C'],
 	          ['*', 0, '#', 'D']]
 
-	ROW = [11, 12, 13, 15]
-	COL = [37, 35, 33, 31]
+	ROW = [11, 12, 13, 15]			#board pin numbers for row of keypad
+	COL = [37, 35, 33, 31]			#board pin numbers for column of keypad
 
 	for j in range(4):
 	    GPIO.setup(COL[j], GPIO.OUT)
@@ -28,7 +28,7 @@ while(True):
 	for i in range(4):
 	    GPIO.setup(ROW[i], GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-	GPIO.setup(29, GPIO.OUT)
+	GPIO.setup(29, GPIO.OUT)		#define pin number 29 as output
 	GPIO.output(29,GPIO. LOW)
 
 	#function to capture key press
