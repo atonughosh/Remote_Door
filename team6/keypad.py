@@ -1,8 +1,16 @@
 #code to interface keypad, change password and open door using password through keypad
 
 while(True):
-	import RPi.GPIO as GPIO
-	import time
+	pass
+
+        import RPi.GPIO as GPIO
+        import time
+        import os
+        import sys
+        import logging
+        from datetime import datetime
+        from threading import Timer
+
 
 	GPIO.setmode(GPIO.BOARD)
 
@@ -59,7 +67,13 @@ while(True):
 
 
 	key_pressed = key_press()
+	
+	#Function to restart the python script after 15 seconds
+	def restart():
+                os.execv(sys.executable, ['python'] + sys.argv)
 
+	#code to call restart function after 15 seconds
+        Timer(15, restart).start()
 
 
 	#code to change password
